@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    border: 0;
+    outline: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+
+.top {
+    background-image: url("../img/background.png");
+    height:768px;
+    width: 1366px;
+}
+
+.title {
+    margin-left: 80px;
+    color: white;
+}
+
+.mainMessage {
+    text-align: center;
+    color: white;
+}
+
+.underMainMessage {
+    text-align: center;
+    color: white;
+}
+
+.stayUpdated {
+    text-align: center;
+}
+
+.stayUpdatedInput {
+    margin-top: 40px;
+    width: 421px;
+    height: 50px;
+    border: transparent;
+    border-radius: 3px;
+    border-style: none;
+
+}
+
+.updateButton {
+    background-color: #03897b;
+    border-radius: 3px;
+    color: white;
+    width: 150px;
+    height: 50px;
+}
+
+.bottom {
+    width: 1366px;
+    height: 322px;
+}
+
+.mainImage {
+    text-align: center;
+}
+
+.imageRow {
+    margin-left: 250px;
+}
+
+
+.headingRow {
+    display: inline-flex;
+    margin-left: 250px;
+}
+
+.globalicon {
+    padding-right: 170px;
+    margin-left: 15px;
+    width: 62px;
+    height: 83px;
+}
+
+.iphoneicon {
+    padding-right: 170px;
+    height:90px;
+    width:48px;
+}
+
+.fingericon {
+    height: 92px;
+    width: 61px;
+}
+
+.global {
+    padding-right: 50px;
+}
+
+.mobile {
+    padding-right: 50px;
+}
+
+.descriptionText {
+    display: inline-flex;
+}
+
+.one {
+    padding-right: 50px;
+}
+
+.two {
+    padding-right: 50px;
+}
+
+
+.endingNote {
+    text-align: center;
+    padding-top: 15px;
+    margin: 0px;
+    display: inline-flex;
+}
+
+.footer {
+    background-color: #bdbcbc;
+    width: 1366px;
+    height: 100px;
+}
