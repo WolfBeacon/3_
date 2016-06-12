@@ -8,17 +8,34 @@
 // ---------------------------------
 @import "components/variables";
 @import "components/responsive";
-@import "components/animation";
 @import "components/global";
+
+// Animations
+// ---------------------------------
+@keyframes reveal{
+	0% {opacity: 0;}
+	100% {opacity: 0.7;}
+}
+	// For the Logo
+.reveal{
+	animation: reveal 1s ease-in-out;
+	animation-fill-mode: forwards;
+}
+
+@keyframes moveUp{
+	0%{opacity: 0; top: 30px; }
+	100%{opacity: 1; top: 0px;}
+}
+	// For Above-The-Fold content
+.moveUp{
+	opacity: 0;
+	position: relative;
+	animation: moveUp 0.6s $smoothCurve;
+	animation-fill-mode: forwards;
+}
 
 // HomePage Styles
 // ---------------------------------
-
-// header{
-// 	padding: 80px 0;
-// 	position: fixed;
-// 	background: transparent;
-// }
 
 section.cover{
 	min-height: 100%;
@@ -32,8 +49,9 @@ section.cover{
 		color: $grey;
 		padding: 60px;
 		letter-spacing: 3px;
-		opacity: 0.7;
 		text-align: center;
+		@extend .reveal;
+
 		@include breakpoint(phone-lg) {
 		    font-size: 1.4rem;
 			text-align: left;
@@ -42,14 +60,16 @@ section.cover{
 
 	.title{
 		padding: 30px 0;
-		opacity: 0.9;
 
 		h1, h2{
 			text-align: center;
+			opacity: 0;
 			font-family: $font-sans;
 			color: $white;
 			text-transform: uppercase;
 			font-size: 1.8rem;
+			@extend .moveUp;
+
 			@include breakpoint(phone-lg) {
 			    font-size: 2rem;
 			}
@@ -63,6 +83,7 @@ section.cover{
 			font-size: 1.1rem;
 			text-transform: none;
 			font-weight: $font-light;
+			animation-delay: 0.1s;
 			@include breakpoint(phone-lg) {
 			    font-size: 1.1rem;
 			}
@@ -80,7 +101,11 @@ section.cover{
 
 		.stayUpdated{
 			display: inline-block;
+			position: relative;
 			margin: 0 auto;
+			@extend .moveUp;
+			animation-delay: 0.2s;
+
 			.stayUpdatedInput{
 				display: inline-block;
 				width: 250px;
@@ -94,6 +119,7 @@ section.cover{
 				font-size: 1.2rem;
 				font-style: italic;
 				vertical-align: middle;
+				position: relative;
 
 				@include breakpoint(tablet) {
 				    width: 400px;
@@ -112,11 +138,12 @@ section.cover{
 				border-radius: 5px;
 				text-transform: uppercase;
 				vertical-align: middle;
+				position: relative;
 				transition: 0.2s all cubic-bezier(.6,.56,.39,1);
 
 				&:hover,
 				&:active {
-					background: $black;
+					background: $cyanLight;
 				}
 			}
 		}
@@ -137,11 +164,12 @@ section.features{
 
 		.featureContainer{
 			display: flex-box;
-			background: grey;
 			max-width: 450px;
 			padding: 30px;
 			text-align: center;
 			margin: 0 auto;
+			visibility: hidden; // Set for ScrollReveal.js
+
 			@include breakpoint(tablet) {
 			    max-width: 350px;
 			}
@@ -197,6 +225,31 @@ footer{
 				top: 3px;
 			}
 
+			.mailLink{
+				text-decoration: none;
+				color: $black;
+				font-style: italic;
+				display: inline-block;
+
+				&:after{
+					content: "";
+					background-color: black;
+					visibility: hidden;
+					width: 100%;
+					transform: scale(0);
+					height: 2px;
+					display: block;
+					transition: 0.3s all cubic-bezier(.04,.28,.1,.98);
+				}
+
+				&:hover{
+					&:after{
+						visibility: visible;
+						transform: scale(1);
+					}
+				}
+			}
+
 			@include breakpoint(tablet) {
 			    display: flex-box;
 			    text-align: left;
@@ -211,6 +264,15 @@ footer{
 
 			a{
 				margin: 0 5px;
+
+				img{
+					transform: scale(1);
+					transition: 0.4s all $smoothCurve;
+
+					&:hover{
+						transform: scale(1.2);
+					}
+				}
 			}
 
 			@include breakpoint(tablet) {

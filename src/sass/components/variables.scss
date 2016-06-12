@@ -5,6 +5,7 @@
 $black: 		#000000;
 $white: 		#ffffff;
 $cyan:			#1f8070;
+$cyanLight:		#26A993;
 $grey: 			#b7b7b3;
 
 //-----------------------------------------------
@@ -23,3 +24,5 @@ $font-bold:    700;
 
 $container-width-tab: calc(100% - 60px);
 $container-width: calc(100% - 60px);
+
+$smoothCurve: cubic-bezier(.04,.28,.1,.98);

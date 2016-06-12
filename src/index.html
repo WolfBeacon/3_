@@ -7,16 +7,15 @@
 <body>
 	<!-- ABOVE THE FOLD -->
 	<section class="cover">
-
 		<div class="container">
 			<div class="logo">WOLFBEACON</div>
 			
 			<div class="title">
-				<h1>The Ultimate Platform for Hackathons</h1>
-				<h2>A beautiful, mobile-first platform. Built by hackers, for hackers. Sign up for the beta today!</h2>
+				<h1 id="fold">The Ultimate Platform for Hackathons</h1>
+				<h2 id="fold">A beautiful, mobile-first platform. Built by hackers, for hackers. Sign up for the beta today!</h2>
 			</div>
 
-			<div class="stayUpdatedContainer">
+			<div class="stayUpdatedContainer" id="fold">
 				<form class="stayUpdated">
 		            <input class="stayUpdatedInput" type="textbox" name="email" placeholder="somebody@example.com">
 		            <button class="updateButton">STAY UPDATED</button>
@@ -52,12 +51,26 @@
 	<!-- FOOTER -->
 	<footer>
 		<div class="container">
-			<div class="copyright">Made with <img src="assets/img/heart.png" alt="love" height="16px"> by 11 hackers from 11 countries. Contact us at hello@wolfbeacon.com</div>
+			<div class="copyright">Made with <img src="assets/img/heart.png" alt="love" height="16px"> by 11 hackers from 11 countries. 
+			Contact us at <span><a href="mailto:hello@wolfbeacon.com" class="mailLink">hello@wolfbeacon.com</a></span></div>
 			<div class="social">
 				<a href="https://www.facebook.com"><img src="assets/img/facebook.png" alt="facebook" height="24px"></a>
 				<a href="https://www.twitter.com"><img src="assets/img/twitter.png" alt="twitter" height="24px"></a>
 			</div>
 		</div>
 	</footer>
+	
+	<!-- Animation Triggers -->
+	<script src="https://cdn.jsdelivr.net/scrollreveal.js/3.1.4/scrollreveal.min.js"></script>
+	<script type="text/javascript">
+		window.sr = ScrollReveal();
+		sr.reveal('.featureContainer', {
+			delay: 150,
+			duration:350,
+			scale: 1,
+			curve: 'cubic-bezier(.05,.82,0,.99)',
+			reset:'true'
+		}, 100);
+	</script>
 </body>
 </html>
