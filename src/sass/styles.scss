@@ -1,0 +1,223 @@
+@charset "UTF-8";
+
+// Vendor
+// ---------------------------------
+@import "vendor/normalize";
+
+// Components
+// ---------------------------------
+@import "components/variables";
+@import "components/responsive";
+@import "components/animation";
+@import "components/global";
+
+// HomePage Styles
+// ---------------------------------
+
+// header{
+// 	padding: 80px 0;
+// 	position: fixed;
+// 	background: transparent;
+// }
+
+section.cover{
+	min-height: 100%;
+	background: url('/assets/img/hero.png') center center no-repeat;
+	background-size: cover;
+
+	.logo{
+		text-transform: uppercase;
+		font-weight: $font-reg;
+		font-size: 1.2rem;
+		color: $grey;
+		padding: 60px;
+		letter-spacing: 3px;
+		opacity: 0.7;
+		text-align: center;
+		@include breakpoint(phone-lg) {
+		    font-size: 1.4rem;
+			text-align: left;
+		}
+	}
+
+	.title{
+		padding: 30px 0;
+		opacity: 0.9;
+
+		h1, h2{
+			text-align: center;
+			font-family: $font-sans;
+			color: $white;
+			text-transform: uppercase;
+			font-size: 1.8rem;
+			@include breakpoint(phone-lg) {
+			    font-size: 2rem;
+			}
+			@include breakpoint(tablet) {
+			    font-size: 2.4rem;
+			}
+			
+		}
+
+		h2{
+			font-size: 1.1rem;
+			text-transform: none;
+			font-weight: $font-light;
+			@include breakpoint(phone-lg) {
+			    font-size: 1.1rem;
+			}
+			@include breakpoint(tablet) {
+			    font-size: 1.3rem;
+			}
+		}
+	}
+
+	.stayUpdatedContainer{
+		padding: 20px;
+		width: auto;
+		margin: 0 auto;
+		text-align: center;
+
+		.stayUpdated{
+			display: inline-block;
+			margin: 0 auto;
+			.stayUpdatedInput{
+				display: inline-block;
+				width: 250px;
+				padding: 10px 20px;
+				margin: 20px 10px;
+				border: transparent;
+				border-radius: 2px;
+				border: 1px solid transparent;
+				font-family: $font-sans;
+				font-weight: $font-light;
+				font-size: 1.2rem;
+				font-style: italic;
+				vertical-align: middle;
+
+				@include breakpoint(tablet) {
+				    width: 400px;
+				}
+			}
+			.updateButton {
+				display: inline-block;
+				text-align: center;
+				padding: 14px 40px 12px;
+				margin: 0 10px;
+				background-color: $cyan;
+				font-size: 1rem;
+				color: white;
+				font-weight: $font-reg;
+				border: 1px solid transparent;
+				border-radius: 5px;
+				text-transform: uppercase;
+				vertical-align: middle;
+				transition: 0.2s all cubic-bezier(.6,.56,.39,1);
+
+				&:hover,
+				&:active {
+					background: $black;
+				}
+			}
+		}
+	}
+}
+
+section.features{
+	.container{
+		display: block;
+		padding: 20px 30px;
+		text-align: center;
+
+		@include breakpoint(tablet) {
+		    display: flex;
+			justify-content: space-between;
+			align-items: flex-start;
+		}
+
+		.featureContainer{
+			display: flex-box;
+			background: grey;
+			max-width: 450px;
+			padding: 30px;
+			text-align: center;
+			margin: 0 auto;
+			@include breakpoint(tablet) {
+			    max-width: 350px;
+			}
+
+			.featureImg{
+				width: 168px;
+
+				@include breakpoint(tablet) {
+				    width: 128px;
+				}
+			}
+
+			.featureTitle{
+				font-size: 1.8rem;
+				text-transform: uppercase;
+
+				@include breakpoint(tablet) {
+				    font-size: 1.4rem;
+				}
+			}
+
+			.featureText{
+				font-weight: $font-reg;
+				font-size: 1rem;
+			}
+		}
+	}
+}
+
+footer{
+	background: $grey;
+	font-family: $font-sans;
+	font-size: 0.8rem;
+
+	.container{
+		display: block;
+		padding-top: 15px;
+		padding-bottom: 15px;
+
+		@include breakpoint(tablet) {
+		    display: flex;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		.copyright{
+			display: block;
+			margin:0;
+			text-align: center;
+
+			img{
+				position: relative;
+				top: 3px;
+			}
+
+			@include breakpoint(tablet) {
+			    display: flex-box;
+			    text-align: left;
+			}
+		}
+
+		.social{
+			display: block;
+			margin: 0;
+			text-align: center;
+			padding-top: 20px;
+
+			a{
+				margin: 0 5px;
+			}
+
+			@include breakpoint(tablet) {
+			    display: flex-box;
+			    text-align: right;
+			    padding-top: 0px;
+			}
+		}
+	}
+}
