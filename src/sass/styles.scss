@@ -23,7 +23,7 @@
 }
 
 @keyframes moveUp{
-	0%{opacity: 0; top: 30px; }
+	0%{opacity: 0; top: 10px; }
 	100%{opacity: 1; top: 0px;}
 }
 	// For Above-The-Fold content
@@ -148,6 +148,22 @@ section.cover{
 			}
 		}
 	}
+	.phones{
+		text-align: center;
+		overflow: hidden;
+		position: absolute;
+		bottom: -4px;
+		left:0;
+		right:0;
+		overflow: hidden;
+		img{
+			@extend .moveUp;
+			animation-delay: 0.2s;
+			width: 100%;
+			max-width: 960px;
+			position: relative;
+		}
+	}
 }
 
 section.features{
@@ -164,21 +180,21 @@ section.features{
 
 		.featureContainer{
 			display: flex-box;
-			max-width: 450px;
+			max-width: 250px;
 			padding: 30px;
 			text-align: center;
 			margin: 0 auto;
 			visibility: hidden; // Set for ScrollReveal.js
 
 			@include breakpoint(tablet) {
-			    max-width: 350px;
+			    max-width: 250px;
 			}
 
 			.featureImg{
-				width: 168px;
+				width: 128px;
 
 				@include breakpoint(tablet) {
-				    width: 128px;
+				    width: 96px;
 				}
 			}
 
@@ -219,6 +235,11 @@ footer{
 			display: block;
 			margin:0;
 			text-align: center;
+			margin-left: 0;
+
+			@include breakpoint(tablet) {
+			    margin-left: 60px;
+			}
 
 			img{
 				position: relative;
@@ -261,6 +282,11 @@ footer{
 			margin: 0;
 			text-align: center;
 			padding-top: 20px;
+			margin-right: 0;
+
+			@include breakpoint(tablet) {
+			    margin-right: 60px;
+			}
 
 			a{
 				margin: 0 5px;
