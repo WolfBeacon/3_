@@ -39,11 +39,19 @@
 
 section.cover{
 	height: 100%;
-	min-height: 815px;
+	min-height: 685px;
 	background: url('/assets/img/hero.png') center center no-repeat;
 	background-size: cover;
 	overflow: hidden;
 	position: relative;
+
+	@include breakpoint(phone-lg) {
+	    min-height: 755px;
+	}
+
+	@include breakpoint(tablet) {
+	    min-height: 815px;
+	}
 
 	.logo{
 		text-transform: uppercase;
@@ -62,7 +70,11 @@ section.cover{
 	}
 
 	.title{
-		padding: 30px 0;
+		padding: 0;
+
+		@include breakpoint(tablet) {
+		    padding: 30px 0;
+		}
 
 		h1, h2{
 			text-align: center;
@@ -97,10 +109,14 @@ section.cover{
 	}
 
 	.stayUpdatedContainer{
-		padding: 20px;
+		padding: 20px 0;
 		width: auto;
 		margin: 0 auto;
 		text-align: center;
+
+		@include breakpoint(tablet) {
+		    padding:20px;
+		}
 
 		.stayUpdated{
 			display: inline-block;
@@ -111,7 +127,7 @@ section.cover{
 
 			.stayUpdatedInput{
 				display: inline-block;
-				width: 250px;
+				min-width: 200px;
 				padding: 10px 20px;
 				margin: 20px 10px;
 				border: transparent;
@@ -123,9 +139,18 @@ section.cover{
 				font-style: italic;
 				vertical-align: middle;
 				position: relative;
+				resize: horizontal;
 
 				@include breakpoint(tablet) {
 				    width: 400px;
+				}
+
+				&:active{
+					width: auto;
+				}
+
+				&:focus{
+					min-width: 100px;
 				}
 			}
 			.updateButton {
